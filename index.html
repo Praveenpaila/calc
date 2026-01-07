@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <script>
+      const submit = () => {
+        const first = document.getElementById("first");
+        const second = document.getElementById("second");
+        const operator = document.getElementById("operator");
+        // document.write(first.value, second.value, operator.value);
+        f = Number(first.value);
+        s = Number(second.value);
+        switch (operator.value) {
+          case "+":
+            f += s;
+            break;
+          case "-":
+            f -= s;
+            break;
+          case "*":
+            f *= s;
+            break;
+          case "/":
+            f /= s;
+        }
+        const ans = document.getElementById("ans");
+        ans.innerText = f;
+      };
+    </script>
+    <div class="main">
+      <input type="text" id="first" />
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <input type="text" id="second" />
+      <button onclick="submit()">calculate</button>
+      <br />
+      <div class="value">
+        value=
+        <span id="ans"></span>
+      </div>
+    </div>
+  </body>
+</html>
